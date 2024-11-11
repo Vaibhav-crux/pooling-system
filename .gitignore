@@ -1,0 +1,39 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+.env/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# IDE and editor specific
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+
+# Operating system specific
+.DS_Store    # macOS
+Thumbs.db    # Windows
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Configuration files (specific to your project setup)
+*.env        # Environment variables (optional)
+*.local
