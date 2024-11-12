@@ -1,5 +1,9 @@
 from kafka import KafkaProducer, KafkaConsumer
-from app.config.db_config import Config
+from kafka.admin import KafkaAdminClient
 
-producer = KafkaProducer(bootstrap_servers=[Config.KAFKA_BROKERS], value_serializer=lambda v: v.encode('utf-8'))
-consumer = KafkaConsumer(Config.KAFKA_TOPIC, bootstrap_servers=[Config.KAFKA_BROKERS], auto_offset_reset='earliest', enable_auto_commit=True, group_id='poll-group')
+KAFKA_BROKERS = "localhost:9092"
+KAFKA_TOPIC = "polls-topic"
+
+producer = KafkaProducer(bootstrap_servers=KAFKA_BROKERS)
+consumer = KafkaConsumer(KAFKA_TOPIC, bootstrap_servers=KAFKA_BROKERS)
+admin_client = KafkaAdminClient(bootstrap_servers=KAFKA_BROKERS)

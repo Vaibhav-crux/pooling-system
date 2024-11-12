@@ -1,12 +1,8 @@
-from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from app.config.database import get_db
+
 from app.models.pools_schema import Poll
 
-router = APIRouter()
-
-@router.get("/leaderboard", response_model=dict)
-def get_leaderboard(db: Session = Depends(get_db)):
+def get_leaderboard(db: Session):
     polls = db.query(Poll).order_by((Poll.option1 + Poll.option2 + Poll.option3 + Poll.option4).desc()).all()
     
     leaderboard = {
