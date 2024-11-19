@@ -10,3 +10,5 @@ app.include_router(leaderboard.router)
 @app.websocket("/ws")
 async def poll_websocket(websocket: WebSocket):
     await websocket_endpoint(websocket)
+
+# Rest APIs
