@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from app.models.pools_schema import Poll, Vote
 
 def create_poll(question: str, db: Session):
-    # Removed unused parameters option1, option2, option3, option4
+    # Removed unused parameters option1, option2, option3, option4 and so on
     poll = Poll(question=question, option1=0, option2=0, option3=0, option4=0)
     db.add(poll)
     db.commit()
